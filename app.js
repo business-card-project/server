@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use((err, req, res, next) => {
+    console.log(err)
     res.status(err.status || 500)
     res.send({
       message: err.message,
